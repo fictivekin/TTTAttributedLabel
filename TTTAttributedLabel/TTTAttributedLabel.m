@@ -311,10 +311,10 @@ static inline CGSize CTFramesetterSuggestFrameSizeForAttributedStringWithConstra
     self.activeLinkAttributes = [NSDictionary dictionaryWithDictionary:mutableActiveLinkAttributes];
     self.inactiveLinkAttributes = [NSDictionary dictionaryWithDictionary:mutableInactiveLinkAttributes];
     _extendsLinkTouchArea = YES;
-    _longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
-                                                                                action:@selector(longPressGestureDidFire:)];
-    self.longPressGestureRecognizer.delegate = self;
-    [self addGestureRecognizer:self.longPressGestureRecognizer];
+    // _longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+    //                                                                             action:@selector(longPressGestureDidFire:)];
+    // self.longPressGestureRecognizer.delegate = self;
+    // [self addGestureRecognizer:self.longPressGestureRecognizer];
 }
 
 - (void)dealloc {
