@@ -103,7 +103,7 @@ static inline NSDictionary * NSAttributedStringAttributesFromLabel(TTTAttributed
 
     [mutableAttributes setObject:label.font forKey:(NSString *)kCTFontAttributeName];
     [mutableAttributes setObject:label.textColor forKey:(NSString *)kCTForegroundColorAttributeName];
-    [mutableAttributes setObject:@(label.kern) forKey:(NSString *)kCTKernAttributeName];
+    // [mutableAttributes setObject:@(label.kern) forKey:(NSString *)kCTKernAttributeName];
 
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.alignment = label.textAlignment;
@@ -1594,7 +1594,7 @@ afterInheritingLabelAttributesAndConfiguringWithBlock:(NSMutableAttributedString
     [coder encodeObject:@(self.highlightedShadowRadius) forKey:NSStringFromSelector(@selector(highlightedShadowRadius))];
     [coder encodeCGSize:self.highlightedShadowOffset forKey:NSStringFromSelector(@selector(highlightedShadowOffset))];
     [coder encodeObject:self.highlightedShadowColor forKey:NSStringFromSelector(@selector(highlightedShadowColor))];
-    [coder encodeObject:@(self.kern) forKey:NSStringFromSelector(@selector(kern))];
+    // [coder encodeObject:@(self.kern) forKey:NSStringFromSelector(@selector(kern))];
     [coder encodeObject:@(self.firstLineIndent) forKey:NSStringFromSelector(@selector(firstLineIndent))];
     [coder encodeObject:@(self.lineSpacing) forKey:NSStringFromSelector(@selector(lineSpacing))];
     [coder encodeObject:@(self.lineHeightMultiple) forKey:NSStringFromSelector(@selector(lineHeightMultiple))];
@@ -1659,9 +1659,9 @@ afterInheritingLabelAttributesAndConfiguringWithBlock:(NSMutableAttributedString
         self.highlightedShadowColor = [coder decodeObjectForKey:NSStringFromSelector(@selector(highlightedShadowColor))];
     }
 
-    if ([coder containsValueForKey:NSStringFromSelector(@selector(kern))]) {
-        self.kern = [[coder decodeObjectForKey:NSStringFromSelector(@selector(kern))] floatValue];
-    }
+    // if ([coder containsValueForKey:NSStringFromSelector(@selector(kern))]) {
+    //     self.kern = [[coder decodeObjectForKey:NSStringFromSelector(@selector(kern))] floatValue];
+    // }
 
     if ([coder containsValueForKey:NSStringFromSelector(@selector(firstLineIndent))]) {
         self.firstLineIndent = [[coder decodeObjectForKey:NSStringFromSelector(@selector(firstLineIndent))] floatValue];
@@ -1810,7 +1810,7 @@ static inline NSDictionary * convertNSAttributedStringAttributesToCTAttributes(N
         NSUnderlineStyleAttributeName:  (NSString *)kCTUnderlineStyleAttributeName,
         NSStrokeWidthAttributeName:     (NSString *)kCTStrokeWidthAttributeName,
         NSStrokeColorAttributeName:     (NSString *)kCTStrokeWidthAttributeName,
-        NSKernAttributeName:            (NSString *)kCTKernAttributeName,
+        // NSKernAttributeName:            (NSString *)kCTKernAttributeName,
         NSLigatureAttributeName:        (NSString *)kCTLigatureAttributeName
     };
     
