@@ -990,7 +990,9 @@ static inline CGSize CTFramesetterSuggestFrameSizeForAttributedStringWithConstra
                 CGContextSetLineWidth(c, CTFontGetUnderlineThickness(font));
                 CFRelease(font);
 
-                CGFloat y = CGFloat_round(runBounds.origin.y + runBounds.size.height / 2.0f);
+                CGFloat strikeoutPositionUnitValue = 0.58; // Down slightly from halfway (0.5), which looks too high on mixed lowercase and uppercase letters
+  
+                CGFloat y = CGFloat_round(runBounds.origin.y + runBounds.size.height * (1.0 - strikeoutPositionUnitValue));
                 CGContextMoveToPoint(c, runBounds.origin.x, y);
                 CGContextAddLineToPoint(c, runBounds.origin.x + runBounds.size.width, y);
 
